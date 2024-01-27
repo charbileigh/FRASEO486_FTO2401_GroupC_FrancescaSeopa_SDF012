@@ -1,0 +1,190 @@
+/* Name: Francesca Seopa
+  Student number: FRASEO486
+  The purpose of this document or project is to style the HTML buttons through the application 
+  of CSS principles that have been taught in the basic CSS course for the webpage.
+*/
+
+
+/* Challenges encountered during the project:
+  - Applying the principles of animating the first and third button without using @keyframes. 
+    This is because I wanted to animate from scratch without simplifying the project. The 
+    animations of the buttons (I chose from the reference) are simplistic and required basic styles,
+    So @keyframes would have been an overkill.
+
+  - Combining the principles of positioning and animations simultaneously, did also prove to be challenging. 
+    It's quite easier to apply either/or of the principles (animation and positioning). But I reckon that the 
+    entire point of this exercise is to push one's limits in terms of CSS capabilities.
+*/
+
+/* Sets the background color of the entire page */
+* {
+  background-color: #e482e4;
+}
+
+/* Sets the font that is used for the entire webpage, where Indie Flower
+  is the main font style and the cursive style is a backup font style for websites that do not 
+  support the Indie Flower Webpage font type */
+body {
+  font-family: "Indie Flower", cursive;
+}
+
+/* Styles applied to the main title or heading of the page that describes what the assignment is for */
+h1 {
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+  display: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Generic styling for all buttons in the entire project/webpage */
+.buttons {
+  border-radius: 100px;
+  font-size: 60px;
+  padding: -150px 800px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+}
+
+/* All the styles applied to the first button found on the page */
+.button-1 {
+    /* generic overall styling of the button */
+    display: inline-block;
+
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 20px 70px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-family: "Indie Flower", cursive;
+    font-weight: 900;
+    font-size: 22px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+
+    /* The styling of the button after the hover effect has been applied to the first button */
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+      border-radius: 15px;
+      z-index: -2;
+      transition: all 0.2s;
+    }
+
+    /* The styling of the button before the hover effect has been applied to the first button */
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #08a22a;
+      transition: all 0.2s;
+      border-radius: 15px;
+      z-index: -1;
+    }
+    /* Indicates what happens to the animation when the hover effect is applied on the first button.
+       in this case the animation is applied on the width of the button (moves from left to right) */
+    &:hover {
+      color: #ffffff;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  
+/* Generic styling that is applied to the second button on the webpage */
+.button-2 {
+  padding: 20px 70px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  font-weight: 900;
+  font-family: "Indie Flower", cursive;
+  background-color: #de3163;
+  color: white;
+}
+
+/* Styling that is applied to the second button during the hover effect. 
+The button has an inserted shadow on the top-left corner of the second button,
+which also has a background shadow  and changes its opacity over time. */
+.button-2:hover {
+  box-shadow: inset 15px 15px 15px 1px rgba(0, 0, 0, 0.5),
+                    -15px -15px 15px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* All the animations applied to the third button found on the webpage */
+.button-3 {
+  /* Generic styling on the third button before animations are applied */
+  display: inline-block;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 20px 70px;
+  border-radius: 20px;
+  background-color: #7f00ff;
+  color: white;
+  font-family: "Indie Flower", cursive;
+  font-weight: 900;
+  font-size: 22px;
+  border: none;
+
+  /* Styling that is applied after the hover effect on the third button */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;  
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7f00ff;
+    border-radius: 15px;
+    z-index: -2;
+  }
+
+  /* Styling that is applied before the hover effect on the third button */
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #41c1f4;
+    transition: all 0.2s;
+    border-radius: 15px;
+    z-index: -1;
+  }
+  /* Indicates what happens to the animation when the hover effect is applied on the third button.
+      in this case the animation is applied on the height of the button (moves from bottom to top). */
+  &:hover {
+    color: #ffffff;
+    &::before {
+      height: 100%;  
+    }
+  }
+}
+
+
