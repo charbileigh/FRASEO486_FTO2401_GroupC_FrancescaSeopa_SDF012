@@ -6,5 +6,5 @@ of CSS principles that have been taught in the basic CSS course for the webpage.
 
 ## Authors
 
-- [@Francesca_Seopa](https://www.github.com/charbileigh)
+- [@Francesca Seopa](https://www.github.com/charbileigh)
 
